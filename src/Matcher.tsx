@@ -140,9 +140,9 @@ const TailwindColorMatcher: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4">
-      <div className="bg-white shadow-lg rounded-lg p-8 max-w-xl w-full">
-        <h1 className="text-2xl font-bold mb-6 text-center">
+    <div className="min-h-[100cqh] flex flex-col items-center justify-center p-4">
+      <div className="bg-white dark:bg-slate-950/80  shadow-lg rounded-lg p-8 max-w-xl w-full">
+        <h1 className="text-2xl font-bold mb-6 text-center dark:text-white">
           Tailwind Color Matcher
         </h1>
 
@@ -153,7 +153,7 @@ const TailwindColorMatcher: React.FC = () => {
         <div className="mb-6">
           <label
             htmlFor="colorInput"
-            className="block text-sm font-medium text-gray-700 mb-2"
+            className="block text-sm font-medium text-gray-700 dark:text-gray-400 mb-2"
           >
             Enter color value
           </label>
@@ -162,7 +162,7 @@ const TailwindColorMatcher: React.FC = () => {
             type="text"
             value={inputValue}
             onChange={handleInputChange}
-            className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
+            className={`w-full px-4 py-2 border dark:border-white/20 rounded-md focus:outline-none focus:ring-2 dark:bg-white/5 dark:text-white ${
               isValid
                 ? "border-gray-300 focus:ring-blue-500"
                 : "border-red-500 focus:ring-red-500"
@@ -185,24 +185,28 @@ const TailwindColorMatcher: React.FC = () => {
         <div className="grid grid-cols-2 justify-between mb-4">
           <div className="flex flex-col">
             <div
-              className="w-full h-12 rounded-md rounded-e-none mb-2"
+              className="w-full h-12 rounded-md rounded-e-none mb-2 border dark:border-white/20 border-e-0"
               style={{ backgroundColor: color }}
             />
             <div className="flex flex-col">
-              <span className="font-medium">{color}</span>
-              <span className="text-sm text-gray-500">{formatRgb(color)}</span>
+              <span className="font-medium dark:text-white">{color}</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">
+                {formatRgb(color)}
+              </span>
             </div>
           </div>
 
           {closestColor && (
             <div className="flex flex-col items-end">
               <div
-                className="w-full h-12 rounded-md rounded-s-none mb-2"
+                className="w-full h-12 rounded-md rounded-s-none mb-2 border dark:border-white/20 border-s-0"
                 style={{ backgroundColor: getColorHex(closestColor) }}
               />
               <div className="flex flex-col text-right">
-                <span className="font-medium">{closestColor}</span>
-                <span className="text-sm text-gray-500">
+                <span className="font-medium dark:text-white">
+                  {closestColor}
+                </span>
+                <span className="text-sm text-gray-500 dark:text-gray-400">
                   {formatRgb(getColorHex(closestColor))}
                 </span>
               </div>
