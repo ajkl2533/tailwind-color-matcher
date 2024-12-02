@@ -81,12 +81,12 @@ const TailwindColorMatcher: React.FC = () => {
     setClosestColor(closest);
     // updateComparison(newColor, getColorHex(closest));
 
-    const params = new URLSearchParams({ color: newColor.substring(1) });
-    window.history.replaceState(
-      {},
-      `Tailwind color matcher: #${params.get(color)}`,
-      `/?${params.toString()}`
-    );
+    // const params = new URLSearchParams({ color: newColor.substring(1) });
+    // window.history.replaceState(
+    //   {},
+    //   `Tailwind color matcher: #${params.get(color)}`,
+    //   `/?${params.toString()}`
+    // );
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -106,12 +106,12 @@ const TailwindColorMatcher: React.FC = () => {
         setClosestColor(closest);
         // updateComparison(hexColor, getColorHex(closest));
 
-        const params = new URLSearchParams({ color: hexColor.substring(1) });
-        window.history.replaceState(
-          {},
-          `Tailwind color matcher: #${params.get(color)}`,
-          `/?${params.toString()}`
-        );
+        // const params = new URLSearchParams({ color: hexColor.substring(1) });
+        // window.history.replaceState(
+        //   {},
+        //   `Tailwind color matcher: #${params.get(color)}`,
+        //   `/?${params.toString()}`
+        // );
       }
     } else {
       setIsValid(false);
